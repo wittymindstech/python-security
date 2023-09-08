@@ -17,9 +17,12 @@ jobs:
       - run:
           name: "Say hello"
           command: python3 py-security.py
+
+version: 2.1
+
 jobs:
  build:
-    machine:
+   machine:
     image: ubuntu-2204:2022.04.2
    steps:
      - checkout
@@ -34,7 +37,7 @@ jobs:
 
      # deploy the image
      - run: docker push company/app:$CIRCLE_BRANCH
-
+     
   
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
